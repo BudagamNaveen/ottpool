@@ -1,0 +1,34 @@
+{% extends "Main/BasePage.html" %}
+{% block content %}
+{% if screenobj %}
+  <article class="media content-section">
+      <img class="rounded-circle article-img" src="{{ Otttitle.platform_image.url }}">
+      <div class="media-body">
+          <h2>
+              <div class="article-title titlecolor" href="#">
+                {{Otttitle.platform_name}}
+              </div>
+          </h2>
+          <p>
+            <strong>
+            Total members in the Pool : </strong>
+            {{pooledmembers_obj.count}}
+          </p>
+          {% for ott in screenobj %}
+            <h4>{{ott.screen_options}}</h4>
+            {% if poolbutton %}
+              <p>You Request for {{ott.ott_title}} pool is awaited ! </p>
+            {% else %}
+              <a href='{% url "Main:PoolInterest" userid=user.id ottid=ott.ott_title.id screenid=ott.id %}'>
+                <button class='btn btn-primary'>Join</button>
+              </a>
+            {% endif %}
+          {% endfor %}
+      </div>
+  </article>
+{% else %}
+  <article class="media content-section">
+     <h2>No Screens Found</h2>
+  </article>
+{% endif %}
+{% endblock content %}

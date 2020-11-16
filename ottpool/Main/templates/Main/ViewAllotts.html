@@ -1,0 +1,24 @@
+{% extends "Main/BasePage.html" %}
+{% block content %}
+    {% if Allott_objects %}
+        {% for ott in Allott_objects %}
+            <article class="media content-section">
+              <a href='{% url "Main:Ottscreendetails" ottid=ott.id %}'>
+                <img class="rounded-circle article-img" src="{{ott.platform_image.url }}">
+            </a>
+             <!--  <div class="media-body">
+                <h2>
+                    <a class="article-title" href="{% url 'Main:Ottscreendetails' ottid=ott.id %}">
+                        {{ ott.platform_name }}
+                    </a>
+                </h2>
+                <p class="article-content"><img src="{{ ott.platform_image.url }}" class="post-image"></p>
+              </div> -->
+            </article>
+        {% endfor %}
+    {% else %}
+            <article class="media content-section">
+                <h3>No Ott's Found</h3>
+            </article>
+    {% endif %}
+{% endblock %}

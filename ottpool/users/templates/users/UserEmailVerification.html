@@ -1,0 +1,10 @@
+{% extends 'Main/BasePage.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+<form method="POST">
+	{% csrf_token %}
+	<input class='form-control col-md-4' type="text" name="emailcode" id='emailcode'><br>
+	<input type="submit" class='btn btn-warning' name="submit">
+</form>
+{% endblock %}
