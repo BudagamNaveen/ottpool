@@ -131,6 +131,6 @@ MEDIA_URL = '/media/'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST='smtp.gmail.com'
 EMAIL_HOST_USER='naveens431@gmail.com'
-EMAIL_HOST_PASSWORD ='Iphone4iphone6iphone6siphonex'
+EMAIL_HOST_PASSWORD =''
 EMAILPORT= 587
 EMAIL_USE_TLS = True
